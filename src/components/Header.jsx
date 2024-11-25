@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = ({setshowTimeline,showTimeline}) => {
   return (
-    <div className="p-4 bg-[#1F1F1F] text-sm flex text-white justify-between items-center border-[1px] border-[#393939]">
+    <div className="p-4 bg-[#1F1F1F] flex-wrap gap-5 justify-center text-sm flex text-white md:justify-between items-center border-[1px] border-[#393939]">
         <div>
         <p>Participants-wise Session Timeline</p>
         </div>

@@ -53,7 +53,7 @@ function App() {
           {/* Timeline */}
           <Timeline timeSlots={timeSlots} />
 
-          <div className="max-h-96 overflow-y-scroll relative">
+          <div className="max-h-96 overflow-y-scroll  relative">
             {participantArray?.map((participant, index) => {
               const totalDuration =
                 new Date(end).getTime() - new Date(start).getTime();
@@ -80,8 +80,8 @@ function App() {
               return (
                 <div
                   key={index}
-                  className="relative py-7 border-b-[1px] border-b-[#393939] "
-                >
+                  className="relative py-7 border-b-[1px] border-b-[#393939] overflow-x-scroll"
+                  >
                   {/* Participant Header */}
                   <ParticipantHeader
                     formatDate={formatDate}
@@ -89,9 +89,10 @@ function App() {
                     participant={participant}
                     durationMinutes={durationMinutes}
                   />
-
-                  {/* Timeline Line */}
-                { showTimeline && <ParticipantTimeline startPosition={startPosition} totalDuration={totalDuration} totalWidth={totalWidth} participant={participant} start={start}/>}
+                  <div className="">
+                    {/* Timeline Line */}
+                  { showTimeline && <ParticipantTimeline startPosition={startPosition} totalDuration={totalDuration} totalWidth={totalWidth} participant={participant} start={start}/>}
+                  </div>
                 </div>
               );
             })}
