@@ -91,7 +91,7 @@ function App() {
                   />
                   <div className="">
                     {/* Timeline Line */}
-                  { showTimeline && <ParticipantTimeline startPosition={startPosition} totalDuration={totalDuration} totalWidth={totalWidth} participant={participant} start={start}/>}
+                  { showTimeline && <ParticipantTimeline extractTime={extractTime} startPosition={startPosition} totalDuration={totalDuration} totalWidth={totalWidth} participant={participant} start={start}/>}
                   </div>
                 </div>
               );

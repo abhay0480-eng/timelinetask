@@ -7,7 +7,11 @@ import VideocamOffIcon from "@mui/icons-material/VideocamOff";
 import MicOffIcon from "@mui/icons-material/MicOff";
 import StopScreenShareIcon from "@mui/icons-material/StopScreenShare";
 
-const ParticipantTimeline = ({startPosition,totalWidth,participant,start,totalDuration}) => {
+const ParticipantTimeline = ({startPosition,totalWidth,participant,start,totalDuration,extractTime}) => {
+    const time = extractTime(start)
+    console.log("start",time.time);
+
+    
   return (
     <div className="relative">
       <div
@@ -57,9 +61,7 @@ const ParticipantTimeline = ({startPosition,totalWidth,participant,start,totalDu
                     left: `${eventStartPosition}%`,
                     zIndex: 20,
                   }}
-                  title={`${eventType} On - ${new Date(
-                    event.start
-                  ).toLocaleTimeString()}`}
+                  title={`${eventType} On - ${extractTime(event.start).time}`} 
                 >
                   <div className="h-4 w-4 rounded-full bg-[#5568FE] text-white flex items-center justify-center">
                     {iconOnMap[eventType]}
@@ -73,9 +75,7 @@ const ParticipantTimeline = ({startPosition,totalWidth,participant,start,totalDu
                     left: `${eventEndPosition}%`,
                     zIndex: 20,
                   }}
-                  title={`${eventType} Off - ${new Date(
-                    event.end
-                  ).toLocaleTimeString()}`}
+                  title={`${eventType} Off - ${extractTime(event.end).time}`}
                 >
                   <div className="h-4 w-4 rounded-full bg-[#FF0000] text-white flex items-center justify-center">
                     {iconOffMap[eventType]}
@@ -95,7 +95,7 @@ const ParticipantTimeline = ({startPosition,totalWidth,participant,start,totalDu
                   left: `${eventStartPosition}%`,
                   zIndex: 20,
                 }}
-                title={`Error - ${event.message}`}
+                title={`Error - ${event.message} - ${extractTime(event.start).time}`}
               >
                 <div className="h-4 w-4 rounded-full bg-[#FF0000] !text-white flex items-center justify-center">
                   {iconOnMap[eventType]}
