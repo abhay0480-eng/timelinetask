@@ -85,7 +85,7 @@ const ParticipantTimeline = ({startPosition,totalWidth,participant,start,totalDu
             );
           }
 
-          // Render for single-state events (e.g., error)
+      
           if (eventType === "errors") {
             return (
               <div
