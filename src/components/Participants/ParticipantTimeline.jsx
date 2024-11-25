@@ -52,7 +52,7 @@ const ParticipantTimeline = ({startPosition,totalWidth,participant,start,totalDu
               <React.Fragment key={`${eventType}-${idx}`}>
                 {/* Start Icon (ON) */}
                 <div
-                  className="absolute top-1/2 transform -translate-y-1/2"
+                  className="absolute top-1/2 transform -translate-y-1/2 cursor-pointer"
                   style={{
                     left: `${eventStartPosition}%`,
                     zIndex: 20,
@@ -68,7 +68,7 @@ const ParticipantTimeline = ({startPosition,totalWidth,participant,start,totalDu
 
                 {/* End Icon (OFF) */}
                 <div
-                  className="absolute top-1/2 transform -translate-y-1/2"
+                  className="absolute top-1/2 transform -translate-y-1/2 cursor-pointer"
                   style={{
                     left: `${eventEndPosition}%`,
                     zIndex: 20,
@@ -90,12 +90,12 @@ const ParticipantTimeline = ({startPosition,totalWidth,participant,start,totalDu
             return (
               <div
                 key={`${eventType}-${idx}`}
-                className="absolute top-1/2 transform -translate-y-1/2"
+                className="absolute top-1/2 transform -translate-y-1/2 cursor-pointer"
                 style={{
                   left: `${eventStartPosition}%`,
                   zIndex: 20,
                 }}
-                title={`Error - ${new Date(event.start).toLocaleTimeString()}`}
+                title={`Error - ${event.message}`}
               >
                 <div className="h-4 w-4 rounded-full bg-[#FF0000] !text-white flex items-center justify-center">
                   {iconOnMap[eventType]}
