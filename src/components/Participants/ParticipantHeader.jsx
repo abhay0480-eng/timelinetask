@@ -2,7 +2,7 @@ import React from 'react'
 
 const ParticipantHeader = ({formatDate, startTime, durationMinutes, participant}) => {
   return (
-    <div className="flex justify-between items-center py-3 px-3 text-white my-2">
+    <div className="flex justify-between items-center pb-3 px-3 text-white my-2">
     <div>
       <p className="text-base font-semibold capitalize my-1">{participant?.name}</p>
       <p className="text-xs font-medium">
